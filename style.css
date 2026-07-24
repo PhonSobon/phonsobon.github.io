@@ -60,7 +60,7 @@
   }
   .nav-inner{
     width:100%;
-    max-width: 980px;
+    max-width: 0px;
     margin:0 auto;
     padding: 0 24px;
     display:flex;
@@ -224,6 +224,7 @@
 
   .bio p{ color: var(--ink-dim); margin: 0 0 14px; max-width: 75ch; text-align: justify; text-justify: inter-word; hyphens: auto; }
   .bio strong{ color: var(--ink); font-weight:600; }
+  .bio strong.dr{ color: var(--ink); font-weight:600; }
 
   /* ---------- WORK EXPERIENCE ---------- */
   .job{
@@ -249,7 +250,7 @@
   /* ---------- PUBLICATIONS ---------- */
   .pub-year{
     font-family:"IBM Plex Mono", monospace;
-    color: var(--ink-faint);
+    color: var(--gold);
     font-size: 0.8rem;
     letter-spacing: 0.08em;
     margin: 30px 0 14px;
@@ -379,7 +380,7 @@
   }
 
   /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 760px){
+  @media (max-width: 800px){
     .job, .edu-item, .simple-list li{ grid-template-columns: 1fr; gap:4px; }
     .job time, .edu-item time, .simple-list time{ order:-1; }
   }
