@@ -60,7 +60,7 @@
   }
   .nav-inner{
     width:100%;
-    max-width: 0px;
+    max-width: 850px;
     margin:0 auto;
     padding: 0 24px;
     display:flex;
