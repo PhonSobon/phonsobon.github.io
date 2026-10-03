@@ -3,7 +3,9 @@
   const toggle = document.getElementById('navToggle');
   const links = document.getElementById('navLinks');
   const navAnchors = Array.from(links.querySelectorAll('a'));
-  const sections = navAnchors.map(a => document.querySelector(a.getAttribute('href')));
+  // scrollspy only applies to in-page links (#section); other pages set .active in HTML
+  const spyAnchors = navAnchors.filter(a => a.getAttribute('href').startsWith('#'));
+  const sections = spyAnchors.map(a => document.querySelector(a.getAttribute('href')));
 
   // fixed nav shadow on scroll
   function onScroll(){
@@ -14,14 +16,14 @@
 
   // scrollspy
   function updateActive(){
+    if(!spyAnchors.length) return;
     let current = sections[0];
     const scrollPos = window.scrollY + 120;
     sections.forEach(sec => {
       if(sec && sec.offsetTop <= scrollPos){ current = sec; }
     });
-    navAnchors.forEach(a => {
-      const target = document.querySelector(a.getAttribute('href'));
-      a.classList.toggle('active', target === current);
+    spyAnchors.forEach((a, i) => {
+      a.classList.toggle('active', sections[i] === current);
     });
   }
 

@@ -412,3 +412,89 @@
     html{ scroll-behavior:auto; }
     *{ transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
   }
+  /* ---------- PROJECT CARDS: meta, tags, details ---------- */
+  .pub-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap: 12px;
+    margin-bottom: 8px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+  }
+  .pub-cat{
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 2px 8px;
+    border-radius: 100px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .pub-meta time{ color: var(--gold); }
+  .pub-tags{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom: 14px; }
+  .pub-tags span{
+    font-size: 0.72rem;
+    color: var(--teal);
+    background: rgba(63,95,107,0.07);
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
+  .pub-more{ margin: -4px 0 14px; font-size: 0.88rem; color: var(--ink-dim); }
+  .pub-more summary{
+    cursor:pointer;
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 0.76rem;
+    color: var(--accent);
+    width: fit-content;
+  }
+  .pub-more summary:hover{ text-decoration: underline; }
+  .pub-more ul{ margin: 10px 0 0; padding-left: 18px; }
+  .pub-more li{ margin-bottom: 4px; }
+  .pub-more li::marker{ color: var(--accent); }
+  .pub-card > :last-child{ margin-bottom: 0; }
+  .pub-empty{ color: var(--ink-faint); font-size: 0.9rem; }
+
+  /* ---------- VIEW ALL / PROJECTS PAGE ---------- */
+  .view-all{
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    margin-top: 6px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 0.82rem;
+    padding: 9px 16px;
+    border: 1px solid var(--accent);
+    border-radius: 100px;
+    color: var(--accent);
+    transition: all .2s ease;
+  }
+  .view-all:hover{ background: var(--accent); color: #ffffff; }
+  .view-all span{ transition: transform .2s ease; }
+  .view-all:hover span{ transform: translateX(3px); }
+
+  .back-link{
+    display:inline-block;
+    margin-bottom: 22px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--ink-dim);
+  }
+  .back-link:hover{ color: var(--accent); }
+  .page-intro{ color: var(--ink-dim); margin: 10px 0 22px; }
+
+  .filters{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom: 30px; }
+  .filters button{
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    padding: 7px 13px;
+    border: 1px solid var(--line-strong);
+    border-radius: 100px;
+    background: none;
+    color: var(--ink-dim);
+    cursor: pointer;
+    transition: all .2s ease;
+  }
+  .filters button span{ color: var(--ink-faint); margin-left: 2px; }
+  .filters button:hover{ border-color: var(--accent); color: var(--ink); }
+  .filters button[aria-pressed="true"]{ background: var(--accent); border-color: var(--accent); color: #ffffff; }
+  .filters button[aria-pressed="true"] span{ color: rgba(255,255,255,0.7); }

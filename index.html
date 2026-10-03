@@ -78,44 +78,9 @@
   <section id="publications">
     <div class="eyebrow"><span class="num">០១</span><span class="rule"></span></div>
     <h2 class="section-title" style="margin-bottom:28px;">Publications & Projects</h2>
-    <div class="pub-year">2026</div>
-    <div class="pub-card">
-      <h3>Khmer Image Description Intelligence</h3>
-      <div class="pub-authors"><span class="me">Sobon</span></div>
-      <div class="pub-venue">Images Description Intelligence Pipeline · Hugging Face</div>
-      <p class="pub-desc">Vision‑language captioning for Khmer, evaluated with chrF to account for Khmer's lack of whitespace boundaries. Iterated from a from‑scratch ResNet‑101 + Bahdanau LSTM through SigLIP+mBART‑50, Florence‑2 LoRA, PaliGemma 2, and a final Qwen2.5‑VL‑3B QLoRA fine‑tune.</p>
-      <div class="pub-links">
-        <span class="disabled">Paper</span>
-        <a href="https://huggingface.co/datasets/phonsobon/khmer_images_captioning_v2" target="_blank" rel="noopener">Dataset</a>
-        <a href="https://huggingface.co/spaces/phonsobon/khimgcap" target="_blank" rel="noopener">Demo</a>
-        <a href="https://huggingface.co/phonsobon/qwen2.5-vl-3b-khmer-captioning-lora" target="_blank" rel="noopener">Code</a>
-      </div>
-    </div>
-    <div class="pub-card">
-      <h3>Khmer Auto‑Complete</h3>
-      <div class="pub-authors"><span class="me">Sobon</span></div>
-      <div class="pub-venue">CTM Document Intelligence Pipeline · Hugging Face</div>
-      <p class="pub-desc">LSTM‑based next‑word prediction for Khmer using word‑level tokenization, with an in‑progress small Transformer‑decoder variant trained from scratch on a 4–8 word context window.</p>
-      <div class="pub-links">
-        <span class="disabled">Paper</span>
-        <a href="https://huggingface.co/datasets/phonsobon/khmer_auto_complete" target="_blank" rel="noopener">Project</a>
-        <span class="disabled">Demo</span>
-        <a href="https://huggingface.co/phonsobon/khmer_auto_completed" target="_blank" rel="noopener">Code</a>
-      </div>
-    </div>
-
-    <div class="pub-card">
-      <h3>Khmer Speech‑to‑Text Web App</h3>
-      <div class="pub-authors"><span class="me">Sobon</span></div>
-      <div class="pub-venue">Independent Project · Hugging Face</div>
-      <p class="pub-desc">FastAPI + static frontend speech‑to‑text application built around a fine‑tuned Qwen3‑ASR model for Khmer, packaged for Docker deployment.</p>
-      <div class="pub-links">
-        <span class="disabled">Paper</span>
-        <span class="disabled">Project</span>
-        <span class="disabled">Demo</span>
-        <a href="https://huggingface.co/phonsobon/khmer-speech-to-text" target="_blank" rel="noopener">Code</a>
-      </div>
-    </div>
+    <div id="latestProjects"></div>
+    <a class="view-all" href="projects.html">View all publications &amp; projects <span aria-hidden="true">→</span></a>
+    <noscript><p class="pub-desc">Enable JavaScript to see projects, or open <a href="projects.html">the full list</a>.</p></noscript>
   </section>
   <!-- WORK EXPERIENCE -->
 <section id="experience">
@@ -375,6 +340,10 @@
   Built by Sobon · Phnom Penh, Cambodia
 </footer>
 
+<script src="projects-data.js"></script>
+<script>
+  renderProjectList(document.getElementById('latestProjects'), PROJECTS.filter(p => p.featured));
+</script>
 <script src="script.js"></script>
 
 </body>
