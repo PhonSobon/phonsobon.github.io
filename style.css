@@ -482,19 +482,43 @@
   .back-link:hover{ color: var(--accent); }
   .page-intro{ color: var(--ink-dim); margin: 10px 0 22px; }
 
-  .filters{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom: 30px; }
+  .filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom: 30px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+  }
   .filters button{
-    font-family:"IBM Plex Mono", monospace;
-    font-size: 0.78rem;
-    padding: 7px 13px;
+    display:inline-flex;
+    align-items:center;
+    gap: 8px;
+    font-family:"IBM Plex Sans", sans-serif;
+    font-size: 0.86rem;
+    font-weight: 500;
+    line-height: 1;
+    padding: 7px 7px 7px 14px;
     border: 1px solid var(--line-strong);
     border-radius: 100px;
-    background: none;
+    background: var(--bg);
     color: var(--ink-dim);
     cursor: pointer;
     transition: all .2s ease;
   }
-  .filters button span{ color: var(--ink-faint); margin-left: 2px; }
+  .filters .f-count{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 100px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    background: var(--bg-elevated);
+    color: var(--ink-dim);
+  }
   .filters button:hover{ border-color: var(--accent); color: var(--ink); }
   .filters button[aria-pressed="true"]{ background: var(--accent); border-color: var(--accent); color: #ffffff; }
-  .filters button[aria-pressed="true"] span{ color: rgba(255,255,255,0.7); }
+  .filters button[aria-pressed="true"] .f-count{ background: rgba(255,255,255,0.18); color: #ffffff; }
